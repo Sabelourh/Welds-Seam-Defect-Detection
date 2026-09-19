@@ -1,3 +1,4 @@
+import os
 import sys
 from pathlib import Path
 import gradio as gr
@@ -50,7 +51,7 @@ def analyze(image, opacity):
 
 {method}
 
-> Academic prototype only. Not a certified NDT inspection system.
+
 """
     return result,text
 
@@ -72,5 +73,11 @@ Take a photo with your phone camera or upload a weld image.
     txt=gr.Markdown()
     btn.click(analyze,[inp,opacity],[out,txt])
 
-if __name__=="__main__":
-    demo.launch(show_error=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 7860))
+
+    demo.launch(
+        server_name="0.0.0.0",
+        server_port=port,
+        show_error=True
+    )
