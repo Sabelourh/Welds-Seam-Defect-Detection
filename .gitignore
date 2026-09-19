@@ -3,7 +3,6 @@ __pycache__/
 .venv/
 data/raw/
 data/classification/
-models/*.pth
 results/*.png
 results/*.csv
 results/*.json
