@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+data/raw/
+data/classification/
+models/*.pth
+results/*.png
+results/*.csv
+results/*.json
+results/*.txt
